@@ -15,7 +15,6 @@ const sum = function(sumArray) {
     0);
 };
 
-
 const multiply = function(theArray) {
   return theArray.reduce((previousValue, currentValue) => previousValue * currentValue,
     1);
@@ -36,3 +35,20 @@ const factorial = function(num) {
         return fact;
     }
 };
+
+const operate = function(operator, num1, num2) {
+    switch (operator) {
+        case "+":
+            return add(num1, num2);
+        case "-":
+            return subtract(num1, num2);
+        case "*":
+            return multiply([num1, num2]);
+        case "/":
+            return divide(num1, num2);
+        default:
+            return sum([num1, num2]);
+    }
+}
+
+//console.log(operate("/", 3, 2))
