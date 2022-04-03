@@ -50,5 +50,3 @@ const operate = function(operator, num1, num2) {
             return sum([num1, num2]);
     }
 }
-
-//console.log(operate("/", 3, 2))
