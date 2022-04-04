@@ -9,8 +9,9 @@ body {
 .calc-container {
     display: flex;
     flex-direction: column;
+    justify-self: center;
     align-self: center;
-    width: 600px;
+    width: 50vw;
     border: 1px solid black;
 }
 
@@ -26,18 +27,44 @@ body {
 }
 
 .calc-buttons{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-rows: 4fr 1fr;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 
+        "numbers operators"
+        "actions operators";
+    gap: 10px;
+    padding: 10px;
 }
 
 .numbers {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template: repeat(4, 1fr)/ repeat(3, 1fr);
+    grid-area: numbers;
+    width: 100%;
+    height: 100%;
 }
 
-.numbers > button {
-    width: 100px;
+.operators {
+    display: grid;
+    grid-template: 1fr  1fr 1fr 1fr / 1fr;
+    grid-area: operators;
+}
+
+.actions {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    grid-area: actions;
+}
+
+.numbers, .operators, .actions {
+    gap: 5px;
+}
+
+
+button {
+    min-height: 40px;
+    padding: 10px;
 }
 
 .calc-input {
